@@ -27,12 +27,15 @@ ActiveRecord::Schema.define(version: 20151215151311) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "ingredients_recipies", id: false, force: :cascade do |t|
-    t.integer "recipy_id",     null: false
-    t.integer "ingredient_id", null: false
+  create_table "ingredients_recipes", id: false, force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "recipe_id"
   end
 
-  create_table "recipies", force: :cascade do |t|
+  add_index "ingredients_recipes", ["ingredient_id"], name: "index_ingredients_recipes_on_ingredient_id"
+  add_index "ingredients_recipes", ["recipe_id"], name: "index_ingredients_recipes_on_recipe_id"
+
+  create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.text     "instructions"
