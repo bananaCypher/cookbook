@@ -5,6 +5,13 @@
   <%= f.text_area :description %>
   <%= f.label :instructions %>
   <%= f.text_area :instructions %>
+  <%= f.label :ingredients %>
+  <%= f.select :ingredients, 
+    Ingredient.all.map{ |ing| [ing.name, ing.id] }, 
+    {:selected => @recipe.ingredients.map{ |ing| ing.id }},
+    {:prompt => "Please select", :multiple => true} 
+  %>
+  <%= f.label :category %>
   <%= f.select :category_id, Category.all.map{ |cat| [cat.name, cat.id] } %>
   <%= f.submit 'Update Recipe' %>
 <% end %>

@@ -21,7 +21,10 @@ class RecipesController < ApplicationController
   end
 
   def update
-    Recipe.find(params[:id]).update(recipe_params)
+    recipe = Recipe.find(params[:id])
+    ingredients = params['recipe']['ingredients'].map { |ing| Ingredient.find(ing) if ing != '' }
+    ingredients.delete_at(0)
+    recipe.ingredients = ingredients
     redirect_to(recipes_path)
   end
 
@@ -32,7 +35,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :instructions, :category_id)
+    params.require(:recipe).permit(:name, :description, :instructions, :category_id, :ingredients)
   end
 end
 
