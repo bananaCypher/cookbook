@@ -13,3 +13,125 @@
  *= require_tree .
  *= require_self
  */
+
+/* My normalizer */
+  html, body {
+    font-family: Helvetica;
+    margin: 0;
+  }
+  a {
+    color: #1d92cf;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:visited {
+    color: #1d92cf;
+    text-decoration: none;
+  }
+
+/* Nav bar */
+  body {
+    margin-top: 48px;
+  }
+  nav {
+    font-size: 13px;
+    line-height: 40px;
+    font-weight: bold;
+    background-color: rgb(50, 50, 50);
+    color: lightgrey;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+  }
+  nav ul {
+    padding-left: 0px;
+    display: block;
+    margin: 0 0;
+  }
+  nav li {
+    height: 100%;
+    display: inline-block;
+    border-right: 1px solid lightgrey;
+    padding: 4px 12px;
+  }
+  nav li img {
+    vertical-align: middle;
+  }
+  nav li input {
+    background-color: rgb(228, 228, 228);
+    border: 0;
+    padding: 4px 8px;
+    vertical-align: middle;
+    height: 24px;
+  }
+  nav a{
+    color: lightgrey;
+  }
+  nav a:visited {
+    color: lightgrey;
+  }
+
+/* Homepage Header */
+  header.home {
+    background-image: url('HeaderImage.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+  }
+  header.home h1 {
+    color: #e91e63;
+    position: relative;
+    top: 335px;
+    margin: 5px;
+    font-size: 60px;
+  }
+
+/* Recipe Sheet */
+  header.recipe {
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+    margin-top: 20px;
+  }
+  header.recipe span {
+    font-size: 20px;
+    background-color: #ff80ab;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  header.recipe a {
+    font-size: 20px;
+    background-color: #e91e63;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    color: black;
+  }
+  header.recipe a:hover {
+    text-decoration: none;
+    background-color: #ff4081;
+  }
+  article.recipe {
+    margin: 0 auto;
+    max-width: 800px;
+    min-height: 200px;
+    background-color: #ff80ab;
+  }
+  article.recipe table {
+    width: 100%;
+    padding: 0 10px;
+  }
+  article.recipe table td {
+    vertical-align: top;
+  }
+  article.recipe ul {
+    margin: 0;
+    padding-left: 24px;
+  }

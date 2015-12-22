@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+      <a href='/'><li>Home</li></a>
+      <a href='/recipes/new'><li>New Recipie</li></a>
+      <a href='/ingredients/new'><li>New Ingredient</li></a>
+      <li><input type="text" placeholder='Search'><input type="image" src="<%= asset_path 'SearchIcon.png' %>"></li>
+    </ul>
+  </nav>
+</header>
 
 <%= yield %>
 

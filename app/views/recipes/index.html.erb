@@ -1,0 +1,32 @@
+<header class="home">
+  <h1>CookBook</h1>
+</header>
+
+<% @recipes.each do |recipe| %>
+  <header class="recipe">
+    <span><%= recipe.name %></span><a href="/recipes/<%= recipe.id %>/edit/">Edit</a><a href="/">Delete</a>
+  </header>
+  <article class="recipe">
+    <table>
+      <thead>
+        <td><b>Ingredients</b></td>
+        <td><b>Description</b></td>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <% recipe.ingredients.each do |ingredient| %>
+                <li><%= ingredient.name %></li>
+              <% end %>
+            </ul>
+          </td>
+          <td>
+            <%= recipe.description %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <p><%= recipe.name %>: <%= recipe.description %></p> -->
+  </article>
+<% end %>
