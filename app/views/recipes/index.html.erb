@@ -2,9 +2,15 @@
   <h1>CookBook</h1>
 </header>
 
+<ul>
+  <% Category.all.each do |cat| %>
+    <li><a href="/recipes/index/<%= cat.id %>"><%= cat.name %>s</a></li>
+  <% end %>
+</ul>
+
 <% @recipes.each do |recipe| %>
   <header class="recipe">
-    <span><%= recipe.name %></span><a href="/recipes/<%= recipe.id %>/edit/">Edit</a><a href="/">Delete</a>
+    <span><%= recipe.name %></span><a href="/recipes/<%= recipe.id %>/edit/">Edit</a><%= button_to("Delete", recipe_path(recipe), method: :delete) %><a href="/recipes/<%= recipe.id %>/">Show</a>
   </header>
   <article class="recipe">
     <table>
@@ -27,6 +33,5 @@
         </tr>
       </tbody>
     </table>
-    <!-- <p><%= recipe.name %>: <%= recipe.description %></p> -->
   </article>
 <% end %>

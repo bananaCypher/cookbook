@@ -118,6 +118,26 @@
     text-decoration: none;
     background-color: #ff4081;
   }
+  header.recipe input {
+    border: 0;
+    font-size: 20px;
+    background-color: #e91e63;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px 10px;
+    color: black;
+    width: auto;
+  }
+  header.recipe input:hover {
+    text-decoration: none;
+    background-color: #ff4081;
+    cursor: pointer;
+  }
+  header.recipe form {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+  }
   article.recipe {
     margin: 0 auto;
     max-width: 800px;
@@ -134,4 +154,41 @@
   article.recipe ul {
     margin: 0;
     padding-left: 24px;
+  }
+
+/* Form */
+  form table {
+    min-height: 400px;
+    border-spacing: 0px;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
+  form label {
+    display: block;
+  }
+  form table tr:first-of-type textarea {
+    height: 300px;
+  }
+  form table tr:first-of-type select {
+    height: 269px;
+  }
+  form table td {
+    width: 150px;
+    vertical-align: top;
+    background-color: #ff80ab;
+    padding: 10px 15px;
+  }
+  form table td:nth-of-type(even) {
+    width: 300px;
+  }
+  form input {
+    width: 100%;
+    border: none;
+    padding: 2px 0px;
+  }
+  form textarea {
+    width: 100%;
+  }
+  form select {
+    width: 100%;
   }

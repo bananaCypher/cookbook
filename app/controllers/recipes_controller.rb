@@ -3,12 +3,20 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def index_filter
+    @recipes = Recipe.where(category_id: params[:id])
+    render 'index'
+  end
+
   def new
     @recipe = Recipe.new
   end
 
   def create
-    Recipe.create(recipe_params)
+    recipe = Recipe.create(recipe_params)
+    ingredients = params['recipe']['ingredients'].map { |ing| Ingredient.find(ing) if ing != '' }
+    ingredients.delete_at(0)
+    recipe.ingredients = ingredients
     redirect_to(recipes_path)
   end
 
