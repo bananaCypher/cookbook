@@ -4,7 +4,12 @@ class RecipesController < ApplicationController
   end
 
   def index_filter
-    @recipes = Recipe.where(category_id: params[:id])
+    category = Category.where("lower(name) = ?", params[:name].downcase).first 
+    if category
+      @recipes = Recipe.where(category_id: category.id)
+    else
+      @recipes = Recipe.all
+    end
     render 'index'
   end
 

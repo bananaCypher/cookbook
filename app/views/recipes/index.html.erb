@@ -4,7 +4,7 @@
 
 <ul>
   <% Category.all.each do |cat| %>
-    <li><a href="/recipes/index/<%= cat.id %>"><%= cat.name %>s</a></li>
+    <li><a href="/recipes/category/<%= cat.name %>"><%= cat.name %>s</a></li>
   <% end %>
 </ul>
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :ingredients
   resources :recipes
-  get 'recipes/index/:id' => 'recipes#index_filter'
+  get 'recipes/category/:name' => 'recipes#index_filter'
   root 'recipes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
