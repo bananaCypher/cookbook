@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :ingredients
+  #resources :ingredients
   resources :recipes
   get 'recipes/category/:name' => 'recipes#index_filter'
   root 'recipes#index'
