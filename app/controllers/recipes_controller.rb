@@ -3,16 +3,6 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-  def index_filter
-    category = Category.where("lower(name) = ?", params[:name].downcase).first 
-    if category
-      @recipes = Recipe.where(category_id: category.id)
-    else
-      @recipes = Recipe.all
-    end
-    render 'index'
-  end
-
   def new
     @recipe = Recipe.new
   end
@@ -35,6 +25,7 @@ class RecipesController < ApplicationController
 
   def update
     recipe = Recipe.find(params[:id])
+    recipe.update(recipe_params)
     ingredients = params['recipe']['ingredients'].map { |ing| Ingredient.find(ing) if ing != '' }
     ingredients.delete_at(0)
     recipe.ingredients = ingredients

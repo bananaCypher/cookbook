@@ -6,6 +6,7 @@
   <% Category.all.each do |cat| %>
     <li><a href="/categories/<%= cat.id %>"><%= cat.name %>s</a></li>
   <% end %>
+  <%= link_to("All categories", categories_path()) %>
 </ul>
 
 <% @recipes.each do |recipe| %>
