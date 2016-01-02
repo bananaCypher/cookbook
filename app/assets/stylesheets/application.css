@@ -30,6 +30,24 @@
     color: #1d92cf;
     text-decoration: none;
   }
+  table {
+    margin: 0 auto;
+  }
+  table a{
+    background-color: rgb(192, 192, 192);
+    padding: 2px 0;
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: rgb(0, 0, 0);
+  }
+  table a:hover, table a:visited{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  table input[type=submit]{
+    cursor: pointer;
+  }
 
 /* Nav bar */
   body {
