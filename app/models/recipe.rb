@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
   # Validators
   validates :name, presence: true
   validates :name, length: {maximum: 255}
-  validates :description, length: {maximum: 1024}
-  validates :instructions, length: {maximum: 1024}
+  validates :description, length: {maximum: 12000}
+  validates :instructions, length: {maximum: 12000}
   validates :category, presence: true
 end

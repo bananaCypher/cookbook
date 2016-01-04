@@ -4,5 +4,5 @@ class Category < ActiveRecord::Base
   # Validators
   validates :name, presence: true
   validates :name, length: {maximum: 255}
-  validates :description, length: {maximum: 1024}
+  validates :description, length: {maximum: 12000}
 end
