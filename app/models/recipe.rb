@@ -11,4 +11,8 @@ class Recipe < ActiveRecord::Base
 
   # Scopes
   scope :ingredient_ids, -> {ingredients.map{ |ing| ing.id }}
+  scope :search_for, -> (term)do 
+    term = "%#{term}%"
+    where("name like ?", term)
+  end
 end

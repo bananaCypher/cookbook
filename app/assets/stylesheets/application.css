@@ -214,3 +214,22 @@
   form select {
     width: 100%;
   }
+
+/* Normalise Form for li */
+  li form {
+    display: inline-block;
+    position: relative;
+  }
+  li form input {
+    width: auto;
+  }
+  li form button {
+    padding: 0;
+    border: 0;
+  }
+  li form img {
+    height: 32px;
+  }
+  li form img:hover {
+    cursor: pointer;
+  }

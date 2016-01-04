@@ -32,6 +32,13 @@ class RecipesController < ApplicationController
     redirect_to(recipes_path)
   end
 
+  def search
+    # term = "%#{params[:term]}%"
+    # @recipes = Recipe.where("name like ?", term)
+    @recipes = Recipe.search_for(params[:term])
+    render "index"
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:name, :description, :instructions, :category_id, :ingredients)

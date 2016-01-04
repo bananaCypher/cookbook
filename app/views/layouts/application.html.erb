@@ -11,13 +11,17 @@
   <nav>
     <ul>
       <a href='/'><li>Home - All Recipes</li></a>
-<!--       <a href='/recipes'><li>All Recipes</li></a> -->
       <a href='/recipes/new'><li>New Recipie</li></a>
       <a href='/categories'><li>All Categories</li></a>
       <a href='/categories/new'><li>New Category</li></a>
       <a href='/ingredients'><li>All Ingredients</li></a>
       <a href='/ingredients/new'><li>New Ingredient</li></a>
-<!--       <li><input type="text" placeholder='Search'><input type="image" src="<%= asset_path 'SearchIcon.png' %>"></li> -->
+      <li>
+        <form method='GET' action='/recipes/index/search'>
+          <input type="text" placeholder='Search' name='term'><button type="submit"><img src="<%= asset_path 'SearchIcon.png' %>"></button>
+          <!-- <input type="image" src="<%= asset_path 'SearchIcon.png' %>"> -->
+        </form>
+      </li>
     </ul>
   </nav>
 </header>
