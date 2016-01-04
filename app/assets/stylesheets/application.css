@@ -48,6 +48,10 @@
   table input[type=submit]{
     cursor: pointer;
   }
+  form h1{
+    text-align: center; 
+    margin: 0;
+  }
 
 /* Nav bar */
   body {

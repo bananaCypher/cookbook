@@ -1,0 +1,22 @@
+<table>
+  <th>
+    <tr>
+      <td><b>Ingredient Name</b></td>
+      <td><b>Description</b></td>
+      <td><b>Actions</b></td>
+    </tr>
+  </th>
+  <% @ingredients.each do |ing| %>
+    <tr>
+      <td><%= ing.name %></td>
+      <td><%= ing.description %></td>
+      <td>
+        <%= link_to("Edit", edit_ingredient_path(ing)) %>
+        <%= button_to("Delete", ingredient_path(ing), method: :delete) %>
+      </td>
+    </tr>
+  <% end %>
+    <tr>
+      <td><%= link_to("Create new ingredient", new_ingredient_path()) %></td>
+    </tr>
+</table>
