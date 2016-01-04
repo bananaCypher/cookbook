@@ -8,4 +8,7 @@ class Recipe < ActiveRecord::Base
   validates :description, length: {maximum: 12000}
   validates :instructions, length: {maximum: 12000}
   validates :category, presence: true
+
+  # Scopes
+  scope :ingredient_ids, -> {ingredients.map{ |ing| ing.id }}
 end
