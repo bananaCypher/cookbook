@@ -9,9 +9,7 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create(recipe_params)
-    ingredients = params['recipe']['ingredients'].map { |ing| Ingredient.find(ing) if ing != '' }
-    ingredients.delete_at(0)
-    recipe.ingredients = ingredients
+    update_ingredients_in_recipe(recipe)
     redirect_to(recipes_path)
   end
 
@@ -25,10 +23,7 @@ class RecipesController < ApplicationController
 
   def update
     recipe = Recipe.find(params[:id])
-    recipe.update(recipe_params)
-    ingredients = params['recipe']['ingredients'].map { |ing| Ingredient.find(ing) if ing != '' }
-    ingredients.delete_at(0)
-    recipe.ingredients = ingredients
+    update_ingredients_in_recipe(recipe)
     redirect_to(recipes_path)
   end
 
@@ -40,5 +35,15 @@ class RecipesController < ApplicationController
   private
   def recipe_params
     params.require(:recipe).permit(:name, :description, :instructions, :category_id, :ingredients)
+  end
+
+  def get_ingredients_param
+    ingredients = params['recipe']['ingredients'].map { |ing| Ingredient.find(ing) if ing != '' }
+    ingredients.delete_at(0)
+    return ingredients
+  end
+
+  def update_ingredients_in_recipe(recipe)
+    recipe.ingredients = get_ingredients_param
   end
 end
