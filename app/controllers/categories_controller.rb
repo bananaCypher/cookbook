@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @recipes = Recipe.where(category_id: params[:id])
+    @recipes = Category.find(params[:id]).recipes
   end
 
   def edit
